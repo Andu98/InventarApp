@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista Firme</title>
+<link rel="stylesheet" type = "text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+
+</head>
+<body>
+<div class="container text-center">
+<div><h1>Lista Firme</h1></div>
+
+<div>
+<table class = "table table-boardered">
+<thead class = "thead-dark">
+<tr>
+<th>ID</th>
+<th>Nume</th>
+<th>Categorii</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<th:block th:each="brand: ${listBrands}">
+<tr>
+<td>[[${brand.id}]]</td>
+<td>[[${brand.name}]]</td>
+<td>[[${brand.categories}]]</td>
+<td>
+<a th:href="@{'/brands/edit/'+${brand.id}}">Edit</a>
+
+
+</tr>
+</th:block>
+</tbody>
+</table>
+</div>
+</div>
+
+</body>
+</html>

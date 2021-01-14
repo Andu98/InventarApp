@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Creare categorie noua</title>
+<link rel="stylesheet" type = "text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+
+</head>
+<body>
+<div class="container text-center">
+<div><h1>Creare categorie noua</h1></div>
+<form th:action="@{/categories/save}" th:object="${category}" method="post">
+<div>
+<div class = "form-group row"> 
+<label class="col-form-label col-sm-4">Nume Categorie: </label>
+<div class= "col-sm-8" >
+<input type = "text" th:field="*{name}" class="form-control" required />
+</div>
+</div>
+<div class="text-center p-3">
+	<button type="submit" class="btn btn-primary" > Creaza</button>
+</div>
+</div>
+</form>
+</div>
+
+</body>
+</html>
